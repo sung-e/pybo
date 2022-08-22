@@ -19,12 +19,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-SECRET_KEY = "nzs6)f8wvff%17*g-t3!-mw@kkb0$0dd6t1!t1j9^smhrye@9q"
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '=7vvu7z65g(h%@(3i7rd4$u8hsl2f_97_81brg@@c*7mzjm6%#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['43.200.72.242']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,9 +120,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[
-    BASE_DIR/'static',
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
 ]
-#로그인 성공 시 자동으로 이동할 URL
+
+# 로그인 성공후 이동하는 URL
 LOGIN_REDIRECT_URL = '/'
+
+# 로그아웃시 이동하는 URL
 LOGOUT_REDIRECT_URL = '/'
+
